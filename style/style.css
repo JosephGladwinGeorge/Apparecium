@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "Varino";
+  src: url("./fonts/VarinoNormal-Regular.eot");
+  src: url("./fonts/VarinoNormal-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/VarinoNormal-Regular.svg") format("svg"),
+    url("./fonts/VarinoNormal-Regular.ttf") format("truetype"),
+    url("./fonts/VarinoNormal-Regular.woff") format("woff"),
+    url("./fonts/VarinoNormal-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "soria";
+  src: url("./fonts/soria-font.eot");
+  src: url("./fonts/Soria-Soria.svg") format("svg"),
+    url("./fonts/Soria-Soria.woff") format("woff"),
+    url("./fonts/Soria-Soria.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  height: 100%;
+}
+input {
+  border-radius: 10px;
+  box-shadow: none;
+  border: 3px;
+  padding-left: 10px;
+  padding: auto;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0px;
+}
+
+.bg {
+  background-image: url("./WhatsApp\ Image\ 2022-02-05\ at\ 9.45.21\ PM.jpeg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+.container {
+  background-color: rgb(193, 194, 181);
+  height: 400px;
+  text-align: center;
+  padding: top 200px;
+  margin-top: 4;
+}
+.header {
+  padding-left: 50px;
+  padding-bottom: 0%;
+}
+.title {
+  color: white;
+  font-family: "Varino";
+  text-align: center;
+  font-size: 500%;
+}
+.heading {
+  font-family: Algerian;
+  text-align: center;
+  font-size: 300%;
+}
+.fields {
+  font-family: "Soria";
+  font-size: 200%;
+}
