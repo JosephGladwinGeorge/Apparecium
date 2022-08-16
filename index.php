@@ -12,7 +12,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
 />
-<link rel="stylesheet" href="./style.css"/>
+<link rel="stylesheet" href="./style1.css"/>
 <?php
  
 ?>
@@ -23,23 +23,31 @@
     <div class="bg">
         <p class="title">APPARECIUM</p>
     </div>
-  <div class="container">
-  <br><br><br>
-  <h2 class="heading">Track Your Cycle</h2>
+  
+  <div class="lol">
+    <br>
+  <h2 class="heading">Track Your Cycle</h2>  
       <form action="" method="POST">
           <label for="last-date" class = fields>Enter the first date of your last period: </label>
           <input type="date" name="last-date" />
         <br><br>
           <label for="cycle-length" class="fields">Cycle interval:</label>
-          <input type="number" name="cycle-length" placeholder="Days" />
+          <input type="number" value="28" name="cycle-length" placeholder="Days" />
           <br><br>
-        <button type="submit" class="btn btn-primary">Predict</button>
+          <br>
+          <label for="name" class = fields>Name: </label>
+          <input type="text" name="name" placeholder="Name(optional)" />
+        <br><br>
+          <label for="email" class="fields">Email: </label>
+          <input type="email" name="email" placeholder="email(optional)" />
+          <br><br>
+          <br />
+        <button type="submit" class="button-17">Predict</button>
       </form>
-</div>
-      <br>
-      <br>
-      
-  <p>
+
+  <br>
+       
+       <div class="try"><p>
   <?php 
    $cycleLength = $Ldate = $Ndate = "";
    if($_SERVER['REQUEST_METHOD'] =='POST')
@@ -53,7 +61,7 @@
        $cycleLength = trim($_POST['cycle-length']);
      $Ldate = trim($_POST['last-date']);
     }
-   
+    
   if(empty($err))
   {
     $date = new DateTime($Ldate);
@@ -64,30 +72,54 @@
     $interval = new DateInterval('P'.$cycleLength.'D');
     $date->add($interval);
     echo "Predicted date for next period is ". $date->format('M d, Y ')."<br>";
+    $name = $_POST['name'];
+    $email= $_POST['email'];
+    $to = "$email";
+    $subject = "PERIOD ALERT!";
+    $txt ="Dear ". $name .",\r\n". "Looks like you are gona have your periods soon around ".$date->format('M d, Y ')."\nTake care and dont forget to log your period date.\nhttps://testingapp756.000webhostapp.com/" ;
+    $headers = "From: periodtracker.apparecium@gmail.com";
+    if($email!=NULL){
+        mail($to,$subject,$txt,$headers);
+    }
+    else{
+      $err = "Fields cannot be blank";
+  
+  }
   }
   
   else{
     echo $err;
   }
+  
+
 }
-    ?>
-  </p>
-  </div>
-  <div class="container">
-  <br><br><br>
-  <h2 class="heading">Get Notified About Your Periods</h2>
-      <form action="mail.php" method="post">
-            <label for="name">Your Name</label>
-            <input type="text"  name="name" placeholder="Your name..">
-            <label for="lname">Email</label>
-            <input type="email"  name="email" placeholder="Your email..">
-           
-            
-            <input type="submit" value="Submit">
-          </form>
+    ?></p></div>
+<br>
+</div></div>
+
+<div id="background-wrap">
+    <div class="x1">
+	      <div class="bird"><span class="beak"></span></div>
+    </div>
+			
+    <div class="x2">
+        <div class="bird"><span class="beak"></span></div>
+    </div>
+			
+    <div class="x3">
+        <div class="bird"><span class="beak"></span></div>
+    </div>
+			
+    <div class="x4">
+        <div class="bird"><span class="beak"></span></div>
+    </div>
+			
+    <div class="x5">
+        <div class="bird"><span class="beak"></span></div>
+    </div>
 </div>
-  <br><br>
-      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <br><br>
+      <div id="carouselExampleCaptions" class="carouselslide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -95,11 +127,11 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <h4 >The average starting age for periods has changed over the years</h4>
+    <h4 class="">The average starting age for periods has changed over the years</h4>
       <p>Back in the 1800s, girls wouldn't get their periods until they were well into their teens — the average age was around 17. Nowadays, the average age to start menstruating is 12 — a whole five years younger. Scientists think there are a few key reasons for this: namely, improved nutrition.The more fat cells you have, the more estrogen you have in your body, which can trigger the start of your menstrual cycle as a girl. IThe more fat cells you have, the more estrogen you have in your body, which can trigger the start of your menstrual cycle as a girl.</p><br>
       <a href="https://www.helpingwomenperiod.org/7-amazing-facts-about-periods-that-everyone-needs-to-know/">Source</a>
       <div class="carousel-caption d-none d-md-block">        
-      </div>
+      </div>    
     </div>
     <div class="carousel-item">
     <h4>Your periods get worse when it is cold</h4>
@@ -131,6 +163,7 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-    
+    <br>
+
   </body>
 </html>
